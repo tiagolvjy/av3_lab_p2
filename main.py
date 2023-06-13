@@ -1,4 +1,5 @@
 import sqlite3
+import os
 from functions.user_db import register, login
 from functions.skins_db import add_cart, list_cart, edit_cart, del_cart, search_skin
 
@@ -35,6 +36,7 @@ def main():
                 username = input("Cadastre o usuário: ")
                 password = input("Cadastre a senha: ")
                 register(conn, username, password)
+                os.system("cls")
             elif opc == 2:
                 username = input("Digite o nome de usuário: ")
                 password = input("Digite a senha: ")
@@ -42,7 +44,9 @@ def main():
                 if user_id:
                     logado = True
                     print("Bem-vindo à SorrisoSkins! =)")
+                    os.system("cls")
                 else:
+                    os.system("cls")
                     print("Falha no login. Usuário ou senha incorretos. Tente novamente.")
             elif opc == 3:
                 print("Até logo mais! :)")
